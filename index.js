@@ -12,13 +12,13 @@ const handleClick = () => {
   let col8 = document.getElementById("col8");
   let col9 = document.getElementById("col9");
   let col10 = document.getElementById("col10");
- //create an array of length 10 
+  //create an array of length 10
   let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-//this is used to measure execution time before starting
+  //this is used to measure execution time before starting
   console.time("executionTime");
-//function 
-  shuffle(numbers); // Shuffle the array
-
+  //function
+  shuffle(numbers); // Shuffle the array function is called
+  //replace all the box with the randomized numbers
   col1.innerHTML = numbers[0];
   col2.innerHTML = numbers[1];
   col3.innerHTML = numbers[2];
@@ -31,6 +31,7 @@ const handleClick = () => {
   col10.innerHTML = numbers[9];
 
   console.log(numbers);
+  //logout the the timet the algorithm end
   console.timeEnd("executionTime");
 };
 
@@ -41,6 +42,5 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
-console.time(shuffle);
 
 submitButton.addEventListener("click", handleClick);
