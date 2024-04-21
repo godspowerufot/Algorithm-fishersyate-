@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+    }
+
+    .column {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        justify-items: center;
+        align-items: center;
+        display: flex;
+        background-color: green;
+        color: white;
+        flex-wrap: wrap;
+        flex-direction: columnumn;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-color: green;
+        border-width: thick;
+        border-style: solid;
+        width: 336px;
+        border-radius: 19px;
+        height: 400px;
+    }
+
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+        margin: 10px;
+    }
+
+    button[type="submit"] {
+        width: 150px;
+        color: green;
+        font-size: 10px;
+        background-color: #f1f1f1;
+        border-color: green;
+        border-radius: 5px;
+        height: 30px;
+        margin-top: 30px;
+    }
+</style>
+
+<body>
+    <h1> POS KEYPAD ILLUSTRATION </h1>
+    <div class="container">
+        <div class="row">
+
+            <div class="column" id="column1">
+                1
+            </div>
+            <div class="column" id="column2">
+                2
+            </div>
+            <div class="column" id="column3">
+                3
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" id="column4">
+                4
+
+
+            </div>
+            <div class="column" id="column5">
+                5
+            </div>
+            <div class="column" id="column6">
+                6
+            </div>
+        </div>
+        <div class="row">
+            <div class="column" id="column7">
+
+
+                7
+            </div>
+            <div class="column" id="column8">
+                8
+            </div>
+            <div class="column" id="column9">
+                9
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="column" id="column10">
+                0
+            </div>
+        </div>
+
+        <div class="submit">
+            <button type="submit" id="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    var randomizedPin = document.getElementById("submit");
+
+    const handleClick = () => {
+        let column1 = document.getElementById("column1");
+        let column2 = document.getElementById("column2");
+        let column3 = document.getElementById("column3");
+        let column4 = document.getElementById("column4");
+        let column5 = document.getElementById("column5");
+        let column6 = document.getElementById("column6");
+        let column7 = document.getElementById("column7");
+        let column8 = document.getElementById("column8");
+        let column9 = document.getElementById("column9");
+        let column10 = document.getElementById("column10");
+
+        let usedValues = []; // Array to store used values
+
+        let setValue = (column) => {
+            let value;
+            do {
+                value = Math.floor(Math.random() * 10);
+            } while (usedValues.includes(value)); // Check if value is already used
+            usedValues.push(value); // Add the value to usedValues array
+            column.innerHTML = value;
+        };
+
+        setValue(column1);
+        setValue(column2);
+        setValue(column3);
+        setValue(column4);
+        setValue(column5);
+        setValue(column6);
+        setValue(column7);
+        setValue(column8);
+        setValue(column9);
+        setValue(column10);
+
+        console.log(usedValues);
+    };
+
+    randomizedPin.addEventListener("click", handleClick);
+
+</script>
+
+</html>

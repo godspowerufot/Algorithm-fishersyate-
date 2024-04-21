@@ -1,34 +1,119 @@
-.col {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  justify-items: center;
-  align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
-  background-color: blue;
-  color: white;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
   justify-content: center;
+  align-items: center;
+  background-image: url("./wasto.jpg"); /* Replace 'your-background-image.jpg' with your actual background image */
+  background-size: cover;
+  background-position: center;
 }
+
+.background-container {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  width: 360px;
+  height: 516px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
+
 .row {
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   gap: 20px;
   margin: 10px;
 }
 
+.col {
+  width: 79px;
+  height: 76px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-family: cursive;
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.submit {
+  margin-top: 30px;
+}
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to control darkness */
+}
+#pinInput {
+  width: 150px;
+  height: 30px;
+  font-weight: 800;
+  border-radius: 5px;
+  font-family: cursive;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-size: larger;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#pinInput:focus {
+  outline: none;
+}
+
+.background-container {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 button[type="submit"] {
   width: 150px;
   border-radius: 5px;
-  height: 30px;
-  margin-top: 30px;
+  font-size: 28px;
+  font-family: cursive;
+  font-weight: bolder;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
